@@ -1,5 +1,7 @@
 #include"unsorted.cpp"
-#include"unsorted.h"
+#include <bits/stdc++.h>
+#include"student.cpp"
+
 #include<iostream>
 using namespace std;
 void print(unsorted<int> a){
@@ -76,6 +78,22 @@ int main(){
    a.delet(6);
    cout<<endl;
    print(a);
+
+   student s1(15234, "Jon", 2.6);
+   student s2(13732, "Tyrion", 3.9);
+   student s3(13569, "Sandor", 1.2);
+   student s4(15467, "Ramsey2", 3.1);
+   student s5(16285, "Arya", 3.1);
+
+   unsorted<student> s;
+   s.insert(s1);
+   s.insert(s2);
+   s.insert(s3);
+   s.insert(s4);
+   s.insert(s5);
+
+   
+
 
    
 
