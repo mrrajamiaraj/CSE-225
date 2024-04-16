@@ -68,6 +68,14 @@ int main(){
    a.delet(5);
    cout<<endl;
    full(a.isfull());
+   a.delet(1);
+   cout<<endl;
+   print(a);
+   cout<<endl;
+   full(a.isfull());  
+   a.delet(6);
+   cout<<endl;
+   print(a);
 
    
 

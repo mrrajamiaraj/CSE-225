@@ -31,7 +31,7 @@ void unsorted<t>::insert(t item){
 template<class t>
 void unsorted<t>::delet(t item){
     int location =0;
-    while(array[location!=item])
+    while(array[location]!=item)
     location++;
     array[location]=array[length-1];
     length--;
