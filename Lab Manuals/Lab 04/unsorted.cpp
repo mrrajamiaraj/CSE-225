@@ -37,15 +37,20 @@ void unsorted<t>::delet(t item){
     length--;
 }
 template<class t>
-int unsorted<t>::retrive(t item){
-    for (int i = 0; i < length; i++) {
-        if (array[i] == item) {
-            // If the item is found, return 1 (indicating found)
-            return 1;
+void unsorted<t>::retrive(t &item, bool &found){
+    int location =0;
+    found = false;
+    while((location<length)&& !found)
+    {
+        if(item == array[location]){
+            found = true;
+        }
+        else{
+            location++;
         }
     }
-    // If the item is not found, return -1 (indicating not found)
-    return -1;
+
+    
     
 }
 template<class t>

@@ -28,7 +28,9 @@ bool studentInfo::operator!=(studentInfo s) {
         return false;
 }
 
-ostream &operator<<(ostream &os, studentInfo &student) {
-    os << student.id << ", " << student.name << ", " << student.cgpa << endl;
-    return os;
+void studentInfo::printInfo() {
+
+    //cout << "Id :" << id << "Name : " << name << "Cgpa : " << cgpa << endl;
+    cout << id << ", " << name << ", " << cgpa << endl;
+
 }

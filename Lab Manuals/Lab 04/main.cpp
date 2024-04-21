@@ -13,17 +13,29 @@ void print(unsorted<int> a)
         cout << value << " ";
     }
 }
-
-void check(unsorted<int> a, int t)
+template<class t>
+void check(unsorted<t> c, t value)
 {
-    int c = a.retrive(t);
-    if (c == 1)
-    {
-        cout << "item is found";
+    bool b;
+    c.retrive(value,b);
+    if(b){
+        cout<<"item is found";
     }
-    else
-        cout << "item is not found";
+    else{
+        cout<<"item not found";
+    }
 }
+// void checks(unsorted<studentInfo> c, int t)
+// {
+//     bool b;
+//     c.retrive(t,b);
+//     if(b){
+//         cout<<"item is found";
+//     }
+//     else{
+//         cout<<"item not found";
+//     }
+// }
 
 void full(bool b)
 {
@@ -85,38 +97,34 @@ int main()
     print(a);
     cout << endl;
 
-    studentInfo s1(15234, "Jon", 2.6), // Creating objects of studentInfo class with the given information
-        s2(13732, "Tyrion", 3.9),
-        s3(13569, "Sandor", 1.2),
-        s4(15467, "Ramsey2", 3.1),
-        s5(16285, "Arya", 3.1);
+    studentInfo s1(15234, "Jon", 2.6),           
+    s2(13732, "Tyrion", 3.9),
+            s3(13569, "Sandor", 1.2),
+            s4(15467, "Ramsey2", 3.1),
+            s5(16285, "Arya", 3.1);
+    studentInfo s6(13596);
 
-    unsorted<studentInfo> students;
-    students.insert(s1);
-    students.insert(s2);
-    students.insert(s3);
-    students.insert(s4);
-    students.insert(s5);
+    unsorted<studentInfo> c;
 
-    studentInfo temp = s4; // Creating a temporary object to search for 15467
-    students.delet(temp);  // Deleting the item from the list
+    c.insert(s1);
+    c.insert(s2);
+    c.insert(s3);
+    c.insert(s4);
+    c.insert(s5);
 
-    // Creating a temporary object to search for 13569
+    c.delet(15467);
 
-    // check(students, temp);                    // Retrieving the item from the list
-    studentInfo r;
-    if (students.retrive(r))
-        cout << "Item is found " << endl;
-    else
-        cout << "Item is not found" << endl;
-    cout << temp << endl; // Printing the item
+    
+    studentInfo temp;
 
-    // Printing the list
-    for (int i = 0; i < students.length; i++)
-    {
-        students.getnext(temp);
-        cout << temp;
+    c.resetlist();
+    
+    check(c,s6);
+    for(int i=0;i<c.getlength();i++){
+        studentInfo temp;
+       c.getnext(temp);
+       temp.printInfo();
+
     }
-    cout << "talsifsdjoif" << endl;
-    return 0;
+
 }
