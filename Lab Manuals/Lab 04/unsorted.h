@@ -16,7 +16,7 @@ class unsorted{
     bool isfull();
     void insert(t);
     void delet(t);
-    int retrive(t);
+    void retrive(t&, bool&);
     void getnext(t&);
 
 

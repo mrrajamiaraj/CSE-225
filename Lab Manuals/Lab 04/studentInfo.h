@@ -15,7 +15,7 @@ class studentInfo {
         studentInfo(int, string, double);
         bool operator==(studentInfo s);
         bool operator!=(studentInfo s);
-        friend ostream &operator<<(ostream &, studentInfo &);
+        void printInfo();
 
 };
 
