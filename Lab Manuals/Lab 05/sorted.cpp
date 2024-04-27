@@ -62,14 +62,14 @@ void sorted<t>::delet(t item){
     length--;
 }
 template<class t>
-void sorted<t>::retrive(t &item, bool &found){
+void sorted<t>::retrive(t& item, bool& found){
     int midpoint;
     found = false;
     int first =0;
     int last = length -1;
     
 
-    while(first<=last){
+    while(first<=last && !found){
         midpoint=(first+last)/2;
         if(item>array[midpoint]){
             first = midpoint+1;
