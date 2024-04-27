@@ -2,20 +2,19 @@
 #define TIMESTAMP_H_INCLUDED
 using namespace std;
 
-class timeStamp {
+class timeStamp
+{
 
-    public:
-        timeStamp();
-        timeStamp(int, int, int);
-        bool operator == (timeStamp);
-        bool operator != (timeStamp);
-        bool operator > (timeStamp);
-        bool operator < (timeStamp);
-        void printthem();
-        friend ostream &operator << (ostream &, timeStamp &);
-        friend istream &operator >> (istream &, timeStamp &);
+public:
+    timeStamp();
+    timeStamp(int, int, int);
+    bool operator==(timeStamp);
+    bool operator!=(timeStamp);
+    bool operator>(timeStamp);
+    bool operator<(timeStamp);
+    void printthem();
 
-    private:
+private:
     int s, m, h;
 };
 

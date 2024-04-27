@@ -46,15 +46,6 @@ bool timeStamp::operator>(timeStamp t)
         return false;
 }
 
-// ostream &operator << (ostream &os, timeStamp &t) {
-//     os << t.s << ":" << t.m << ":" << t.h;
-//     return os;
-// }
-
-// istream  &operator >> (istream &is, timeStamp &t) {
-//     is >> t.s >> t.m >> t.h;
-//     return is;
-// }
 void timeStamp::printthem()
 {
     string s, m, h;
