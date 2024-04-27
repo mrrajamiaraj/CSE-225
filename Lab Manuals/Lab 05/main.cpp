@@ -87,13 +87,14 @@ int main()
     timeStampList.insert(t4);
     timeStampList.insert(t5);
 
-    timeStamp temp(25, 36, 17);     // Creating a temporary object to search for the given time
-    timeStampList.delet(temp); // Deleting the item from the list
+    timeStamp temp(25, 36, 17); // Creating a temporary object to search for the given time
+    timeStampList.delet(temp);  // Deleting the item from the list
 
     // Printing the list
     for (int i = 0; i < timeStampList.lengthis(); i++)
     {
+        timeStamp temp;
         timeStampList.getnext(temp);
-        cout << temp << endl;
+        temp.printthem();
     }
 }
