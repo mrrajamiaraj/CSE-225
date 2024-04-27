@@ -38,9 +38,9 @@ void sorted<t>::insert(t item){
     while(location<length){
         if(item>array[location])
         location++;
-        else if(item<array[location]){
-            break;
-        }
+        // else if(item<array[location]){
+        //     break;
+        // }
         
     }
     for(int index=length;index>location;index--){
