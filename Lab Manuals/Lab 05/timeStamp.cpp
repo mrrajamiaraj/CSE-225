@@ -1,4 +1,6 @@
+#include <bits/stdc++.h>
 #include "timeStamp.h"
+using namespace std;
 
 timeStamp::timeStamp()
 {
@@ -48,21 +50,21 @@ bool timeStamp::operator>(timeStamp t)
 
 void timeStamp::printthem()
 {
-    string s, m, h;
+    string sec, min, hour;
     if (s > 0)
-        s = to_string(s);
+        sec = to_string(s);
     else
-        s = '0' + to_string(s);
+        sec = '0' + to_string(s);
 
     if (m > 0)
-        m = to_string(m);
+        min = to_string(m);
     else
-        m = '0' + to_string(m);
+        min = '0' + to_string(m);
 
     if (h > 0)
-        h = to_string(h);
+        hour = to_string(h);
     else
-        h = '0' + to_string(h);
+        hour = '0' + to_string(h);
 
-    cout << s << ":" << m << ":" << h << endl;
+    cout << sec << ":" << min << ":" << hour << endl;
 }

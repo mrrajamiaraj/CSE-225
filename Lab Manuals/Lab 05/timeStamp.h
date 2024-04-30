@@ -1,7 +1,7 @@
 #ifndef TIMESTAMP_H_INCLUDED
 #define TIMESTAMP_H_INCLUDED
-using namespace std;
 
+#include <bits/stdc++.h>
 class timeStamp
 {
 

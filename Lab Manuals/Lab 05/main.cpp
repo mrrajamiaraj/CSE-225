@@ -6,13 +6,16 @@ using namespace std;
 
 int checklength(sorted<int> a)
 {
+    
     int i = a.lengthis();
+
     return i;
 }
 
-void list(sorted<int> a)
+template<class t>
+void list123(sorted<t> &a)
 {
-    int item;
+    t item;
     int size = a.lengthis();
     for (int i = 0; i < size; i++)
     {
@@ -55,15 +58,23 @@ int main()
 {
     sorted<int> a;
 
+
+
     a.insert(5);
+
     a.insert(7);
+
     a.insert(4);
+
     a.insert(2);
+
     a.insert(1);
+
+
 
     cout << checklength(a);
     cout << endl;
-    list(a);
+    list123(a);
 
     find(a, 6);
     find(a, 5);
@@ -71,7 +82,7 @@ int main()
 
     a.delet(1);
     a.resetlist();
-    list(a);
+    list123(a);
 
     // Second Task
     timeStamp t1(15, 34, 23); // Creating objects of timeStamp class with the given information
