@@ -1,6 +1,6 @@
 #include "sorted.cpp"
 #include <iostream>
-#include "timeStamp.cpp"
+ #include "timeStamp.cpp"
 
 using namespace std;
 
@@ -73,28 +73,28 @@ int main()
     a.resetlist();
     list(a);
 
-    // Second Task
-    timeStamp t1(15, 34, 23); // Creating objects of timeStamp class with the given information
-    timeStamp t2(13, 13, 02);
-    timeStamp t3(43, 45, 12);
-    timeStamp t4(25, 36, 17);
-    timeStamp t5(52, 02, 20);
+    // // Second Task
+    // timeStamp t1(15, 34, 23); // Creating objects of timeStamp class with the given information
+    // timeStamp t2(13, 13, 02);
+    // timeStamp t3(43, 45, 12);
+    // timeStamp t4(25, 36, 17);
+    // timeStamp t5(52, 02, 20);
 
-    sorted<timeStamp> timeStampList; // Creating an object of SortedType class
-    timeStampList.insert(t1);        // Inserting the objects in the list
-    timeStampList.insert(t2);
-    timeStampList.insert(t3);
-    timeStampList.insert(t4);
-    timeStampList.insert(t5);
+    // sorted<timeStamp> timeStampList; // Creating an object of SortedType class
+    // timeStampList.insert(t1);        // Inserting the objects in the list
+    // timeStampList.insert(t2);
+    // timeStampList.insert(t3);
+    // timeStampList.insert(t4);
+    // timeStampList.insert(t5);
 
-    timeStamp temp(25, 36, 17); // Creating a temporary object to search for the given time
-    timeStampList.delet(temp);  // Deleting the item from the list
+    // timeStamp temp(25, 36, 17); // Creating a temporary object to search for the given time
+    // timeStampList.delet(temp);  // Deleting the item from the list
 
-    // Printing the list
-    for (int i = 0; i < timeStampList.lengthis(); i++)
-    {
-        timeStamp temp;
-        timeStampList.getnext(temp);
-        temp.printthem();
-    }
+    // // Printing the list
+    // for (int i = 0; i < timeStampList.lengthis(); i++)
+    // {
+    //     timeStamp temp;
+    //     timeStampList.getnext(temp);
+    //     temp.printthem();
+    // }
 }

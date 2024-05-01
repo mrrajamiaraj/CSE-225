@@ -55,23 +55,23 @@ bool timeStamp::operator>(timeStamp t)
 //     is >> t.s >> t.m >> t.h;
 //     return is;
 // }
-void timeStamp::printthem()
-{
-    string s, m, h;
-    if (s > 0)
-        s = to_string(s);
-    else
-        s = '0' + to_string(s);
+// void timeStamp::printthem()
+// {
+//     string s, m, h;
+//     if (s > 0)
+//         s = to_string(s);
+//     else
+//         s = '0' + to_string(s);
 
-    if (m > 0)
-        m = to_string(m);
-    else
-        m = '0' + to_string(m);
+//     if (m > 0)
+//         m = to_string(m);
+//     else
+//         m = '0' + to_string(m);
 
-    if (h > 0)
-        h = to_string(h);
-    else
-        h = '0' + to_string(h);
+//     if (h > 0)
+//         h = to_string(h);
+//     else
+//         h = '0' + to_string(h);
 
-    cout << s << ":" << m << ":" << h << endl;
-}
+//     cout << s << ":" << m << ":" << h << endl;
+// }
