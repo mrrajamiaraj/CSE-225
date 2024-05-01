@@ -81,6 +81,7 @@ void unsortedType<t>::RetriveItem(t &item, bool &found)
         found = true;
         else 
         location = location->next;
+    }    
     
 }
 template <class t>
