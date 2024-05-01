@@ -1,7 +1,8 @@
 #ifndef SORTED_H_INCLUDED
 #define SORTED_H_INCLUDED
+#include <bits/stdc++.h>
 
-const int MAX =5 ;
+const int MAX =10 ;
 template<class t>
 class sorted{
     public :

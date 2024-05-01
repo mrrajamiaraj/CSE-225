@@ -1,1 +1,5 @@
-#include "timeStamp.cpp"
+
+        timeStamp temp;
+        timeStampList.getnext(temp);
+        temp.printthem();
+    }
