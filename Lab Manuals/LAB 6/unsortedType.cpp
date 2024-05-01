@@ -79,27 +79,28 @@ void unsortedType<t>::RetriveItem(t &item, bool &found)
         if (item == location->info)
             ;
         found = true;
-    }
-    else location = location->next;
+        else 
+        location = location->next;
+    
 }
 template <class t>
-void unsorted<t>::MakeEmpty()
+void unsortedType<t>::MakeEmpty()
 {
     NodeType *location;
-    while (listData != Null)
+    while (listData != NULL)
     {
         location = listData;
-        listData = listDta->next;
+        listData = listData->next;
     }
     length = 0;
 }
 template <class t>
-void unsorted<t>::ResetList()
+void unsortedType<t>::ResetList()
 {
     CurrentPos = NULL;
 }
 template <class t>
-void unsorted<t>::GetNextItem(t &item)
+void unsortedType<t>::GetNextItem(t &item)
 {
     if (CurrentPos == NULL)
     {
