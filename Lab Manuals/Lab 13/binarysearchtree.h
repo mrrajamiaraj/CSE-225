@@ -1,16 +1,20 @@
-#ifndef BINARYSEARCHTREE_H_INCLUDED 
-#define BINARYSEARCHTREE_H_INCLUDED 
+//
+// Created by rajam on 5/24/2024.
+//
 
-template <class t>
+#ifndef BINARYSEARCHTREE_H
+#define BINARYSEARCHTREE_H
+#include "quetype.h"
+template<class t>
 struct TreeNode {
     t info;
     TreeNode* left;
     TreeNode* right;
 };
+
+enum OrderType{PRE_ORDER, IN_ORDER, POST_ORDER};
 template <class t>
 class TreeType {
-private :
-    TreeNode<t>* root;
 public:
     TreeType();
     ~TreeType();
@@ -18,13 +22,19 @@ public:
     bool IsEmpty();
     bool IsFull();
     int LengthIs();
-    void retrive(t &item,bool &found);
-    void insert(t);
-    void print();
-    void DeleteItem(t);
-
+    void RetriveItem(t& item ,bool& found);
+    void InsertItem(t item);
+    void Print();
+    void DeleteItem(t item);
+    void ResetTree(OrderType order);
+    void GetNextItem(t &item, OrderType order, bool& finished);
+private:
+    TreeNode<t>* root;
+    quetype<t>* preQue;
+    quetype<t>* inQue;
+    quetype<t>* postQue;
 };
 
 
 
-#endif // BINARYSEARCHTREE_H_INCLUDED
+#endif //BINARYSEARCHTREE_H

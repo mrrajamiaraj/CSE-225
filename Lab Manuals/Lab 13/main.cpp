@@ -12,19 +12,32 @@ void checkEmpty(bool b) {
 
 void itemFound(TreeType<int> &tree, int item) {
     bool found;
-    tree.RetrieveItem(item, found);
+    tree.RetriveItem(item, found);
     if (found)
         cout << "Item is found" << endl;
     else
         cout << "Item is not found" << endl;
 }
 
+void insertRecursively(TreeType<int> &newTree, int array[], int start, int end) {
+    int mid = (start + end) / 2;
+    newTree.InsertItem(array[mid]);
+
+    if (start == end)
+        return;
+
+    if (start < mid)
+        insertRecursively(newTree, array, start, mid - 1);
+
+    insertRecursively(newTree, array, mid + 1, end);
+}
+
 int main() {
 
+    // First Task
+    TreeType<int> tree;                          // Create a tree object
 
-    TreeType<int> tree;
-
-    checkEmpty(tree.IsEmpty());
+    checkEmpty(tree.IsEmpty());                  // Print if the tree is empty or not
 
     tree.InsertItem(4);                          // Insert ten items
     tree.InsertItem(9);
@@ -37,11 +50,75 @@ int main() {
     tree.InsertItem(5);
     tree.InsertItem(1);
 
-    checkEmpty(tree.IsEmpty());
+    checkEmpty(tree.IsEmpty());                  // Print if the tree is empty or not
 
-    cout << tree.LengthIs() << endl;
+    cout << tree.LengthIs() << endl;             // Print the length of the tree
 
-    itemFound(tree, 9);
-    itemFound(tree, 13);
+    itemFound(tree, 9);                          // Retrieve 9 and print whether found or not
+    itemFound(tree, 13);                         // Retrieve 13 and print whether found or not
 
-    tree.Print();
+    // Print the elements in the tree (inorder)
+    tree.ResetTree(IN_ORDER);
+    bool finish = false;
+    while (!finish) {
+        int value;
+        tree.GetNextItem(value, IN_ORDER, finish);
+        cout << value << " ";
+    }
+    cout << endl;
+
+    // Print the elements in the tree (preorder)
+    tree.ResetTree(PRE_ORDER);
+    finish = false;
+    while (!finish) {
+        int value;
+        tree.GetNextItem(value, PRE_ORDER, finish);
+        cout << value << " ";
+    }
+    cout << endl;
+
+    // Print the elements in the tree (postorder)
+    tree.ResetTree(POST_ORDER);
+    finish = false;
+    while (!finish) {
+        int value;
+        tree.GetNextItem(value, POST_ORDER, finish);
+        cout << value << " ";
+    }
+    cout << endl;
+
+    tree.MakeEmpty();                            // Make the tree empty
+
+
+    // Second Task
+    TreeType<int> sequenceTree;                  // Create a tree object
+    int num = 10;
+    int sequence[] = {11, 9, 4, 2, 7, 3, 17, 0, 5, 1};
+
+    for (int i = 0; i < num; i++) {
+        sequenceTree.InsertItem(sequence[i]);
+    }
+
+    int n, arr[num + 10], index = 0;
+
+    sequenceTree.ResetTree(IN_ORDER);
+    finish = false;
+    while (!finish) {
+        sequenceTree.GetNextItem(n, IN_ORDER, finish);
+        arr[index++] = n;
+    }
+
+    TreeType<int> newTree;
+
+    insertRecursively(newTree, arr, 0, index - 1);
+
+    newTree.ResetTree(PRE_ORDER);
+    finish = false;
+    while (!finish) {
+        newTree.GetNextItem(n, PRE_ORDER, finish);
+        cout << n << " ";
+    }
+    cout << endl;
+
+    return 0;
+}

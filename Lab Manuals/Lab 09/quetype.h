@@ -1,29 +1,31 @@
-#ifndef QUETYPE_H_INCLUDED
-#define QUETYPE_H_INCLUDED
+//
+// Created by rajam on 5/23/2024.
+//
 
-class FullQueue {
+#ifndef QUETYPE_H
+#define QUETYPE_H
+class FullQueue{};
+class EmptyQueue{};
+
+template <class t>
+class quetype {
+private:
+    int front;
+    int rear;
+    int maxQue;
+    t* item;
+public:
+    quetype();
+    quetype(int);
+    ~quetype();
+    void makeempty();
+    bool isempty();
+    bool isfull();
+    void enque(t);
+    void deque(t &);
+
 };
 
-class EmptyQueue {
-};
 
-template<class ItemType>
-class QueType {
-    public:
-        QueType();
-        QueType(int max);
-        ~QueType();
-        void MakeEmpty();
-        bool IsEmpty();
-        bool IsFull();
-        void Enqueue(ItemType);
-        void Dequeue(ItemType &);
 
-    private:
-        int front;
-        int rear;
-        ItemType *items;
-        int maxQue;
-};
-
-#endif // QUETYPE_H_INCLUDED
+#endif //QUETYPE_H
