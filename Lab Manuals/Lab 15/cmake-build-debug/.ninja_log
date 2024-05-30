@@ -1,0 +1,9 @@
+# ninja log v5
+11	410	7382891733530467	CMakeFiles/Lab_15.dir/quetype.cpp.obj	82a363968580f27e
+8	382	7382892544947969	CMakeFiles/Lab_15.dir/graphtype.cpp.obj	ab7483e0c571cb7d
+15	388	7382893053841990	CMakeFiles/Lab_15.dir/graphtype.cpp.obj	ab7483e0c571cb7d
+14	395	7382893365326970	CMakeFiles/Lab_15.dir/graphtype.cpp.obj	ab7483e0c571cb7d
+10	413	7382893365512503	CMakeFiles/Lab_15.dir/main.cpp.obj	31b1777a2dbee1c8
+413	525	7382893366606189	Lab_15.exe	f71c5b14e40bd80b
+11	420	7382893852463527	CMakeFiles/Lab_15.dir/main.cpp.obj	31b1777a2dbee1c8
+420	495	7382893853186135	Lab_15.exe	f71c5b14e40bd80b

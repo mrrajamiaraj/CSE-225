@@ -1,100 +1,65 @@
 #include <iostream>
-#include "quetype.cpp"
+#include <queue>
 using namespace std;
 
-void checkEmpty(bool b) {                        // Helper function to check if the stack is empty
-    if (b)
-        cout << "Queue is Empty" << endl;
-    else
-        cout << "Queue is not Empty" << endl;
-}
+template <class T>
+class StackUsingQueues {
+private:
+    queue<T> queue1, queue2;
 
-void checkFull(bool b) {                         // Helper function to check if the list is full
-    if (b)
-        cout << "Queue is full" << endl;
-    else
-        cout << "Queue is not full" << endl;
-}
+public:
+    StackUsingQueues() {}
 
-void Print(quetype<int> &queType) {              // Helper function to print the list
-    quetype<int> temp;
+    void push(T data) {
+        // Push the new element into queue2
+        queue2.push(data);
 
-    while (!queType.isempty()) {
-        int value;
-        queType.deque(value);
-        cout << value << " ";
-        temp.enque(value);
+        // Move all elements from queue1 to queue2
+        while (!queue1.empty()) {
+            queue2.push(queue1.front());
+            queue1.pop();
+        }
+
+        // Swap the names of queue1 and queue2
+        swap(queue1, queue2);
     }
-    cout << endl;
 
-    while (!temp.isempty()) {
-        int value;
-        temp.deque(value);
-        queType.enque(value);
+    void pop() {
+        if (queue1.empty()) {
+            throw runtime_error("Stack is empty");
+        }
+        queue1.pop();
     }
-}
+
+    T top() {
+        if (queue1.empty()) {
+            throw runtime_error("Stack is empty");
+        }
+        return queue1.front();
+    }
+
+    bool empty() {
+        return queue1.empty();
+    }
+};
 
 int main() {
-    // First Task
-    quetype<int> queue1(5);                       // Create a queue of integer sof size 5
+    StackUsingQueues<int> stack;
 
-    checkEmpty(queue1.isempty());                 // Print if the queue is empty or not
+    stack.push(10);
+    stack.push(20);
+    stack.push(30);
 
-    queue1.enque(5);                            // Enqueue four items 5, 7, 4, 2
-    queue1.enque(7);
-    queue1.enque(4);
-    queue1.enque(2);
+    cout << "Top element: " << stack.top() << endl; // Should print 30
 
-    checkEmpty(queue1.isempty());                 // Print if the queue is empty or not
+    stack.pop();
+    cout << "Top element after pop: " << stack.top() << endl; // Should print 20
 
-    checkFull(queue1.isfull());                   // Print if the queue is full or not
+    stack.pop();
+    cout << "Top element after another pop: " << stack.top() << endl; // Should print 10
 
-    queue1.enque(6);                            // Enqueue another item 6
+    stack.pop();
+    cout << "Is stack empty: " << stack.empty() << endl; // Should print 1 (true)
 
-    Print(queue1);
-    cout<<"hello1"<<endl;
-    // Print the values in the queue
-
-    checkFull(queue1.isfull());
-    cout<<"hello2"<<endl;
-    // Print if the queue is full or not
-
-    if (!queue1.isfull())                         // Enqueue another item 8
-        queue1.enque(8);
-    else
-        cout << "Queue Overflow" << endl;
-
-    int d;                                       // Dequeue two items
-    queue1.deque(d);
-    queue1.deque(d);
-
-    Print(queue1);                                // Print the values in the queue
-
-    queue1.deque(d);                            // Dequeue three items
-    queue1.deque(d);
-    queue1.deque(d);
-
-    checkEmpty(queue1.isempty());                 // Print if the queue is empty or not
-
-    if (!queue1.isempty())                        // Dequeue an item
-        queue1.deque(d);
-    else
-        cout << "Queue Underflow" << endl;
-
-    quetype<string> binary;
-    int n;
-    string var;
-    cin >>n;
-
-    binary.enque("1");
-    while(n--) {
-        binary.deque(var);
-        string s1 = var;
-        cout<< s1<<endl;
-
-        string s2 = s1;
-        binary.enque(s1.append("0"));
-        binary.enque(s2.append("1"));
-
-    }
+    return 0;
 }
